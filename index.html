@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>くらしと制度のツール | 政治見える化プロジェクト</title>
+<meta name="description" content="給料・税金・社会保険のしくみを自分の数字で確かめられるツール集。">
+<meta property="og:title" content="くらしと制度のツール | 政治見える化プロジェクト">
+<meta property="og:description" content="給料・税金・社会保険のしくみを自分の数字で確かめられるツール集。">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="/tools/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* 配色・角丸などのトークンは src/shared/tokens.js と同値 */
+:root{--bg:#FAF6EF;--card:#FFFFFF;--ink:#3A3C40;--sub:#7A7E86;--line:#EFE9DD;--accent:#3D7EA6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Zen Maru Gothic','Hiragino Maru Gothic ProN','BIZ UDPGothic',sans-serif;line-height:1.8;min-height:100vh;display:flex;flex-direction:column}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px;width:100%}
+header{padding:36px 0 10px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--sub)}
+h1{font-size:24px;font-weight:700;letter-spacing:.03em;margin:6px 0 0}
+.lead{font-size:13.5px;color:#6A6E76;margin:8px 0 18px}
+.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 8px rgba(80,70,50,.04);transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(80,70,50,.10)}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.card h2{font-size:16px;font-weight:700;margin:0 0 4px}
+.card p{font-size:12.5px;color:var(--sub)}
+.card .go{display:block;margin-top:8px;font-size:12.5px;font-weight:700;color:var(--accent)}
+footer{margin-top:auto;text-align:center;padding:28px 18px;font-size:11.5px;color:#A09A8C}
+footer a{color:#8A93A3;font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">政治見える化プロジェクト</div>
+  <h1>くらしと制度のツール</h1>
+  <p class="lead">給料・税金・社会保険のしくみを、自分の数字で確かめられるツール集です。</p>
+</header>
+<main>
+  <a class="card" href="tedori/">
+    <h2>手取りシミュレーター</h2>
+    <p>給料から何が引かれて、どこへ行くのか</p>
+    <span class="go">開く →</span>
+  </a>
+  <a class="card" href="kabe/">
+    <h2>年収の壁シミュレーター</h2>
+    <p>パート・アルバイトの106万・130万の壁を試算</p>
+    <span class="go">開く →</span>
+  </a>
+</main>
+</div>
+<footer><a href="/">政治見える化プロジェクト</a></footer>
+</body>
+</html>
