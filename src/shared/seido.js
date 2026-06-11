@@ -67,13 +67,14 @@ export const KABE_CONFIG = {
   kinroGakuseiKojoRT: 260000, // 勤労学生控除(住民税)
   shahoWageThreshold: 1060000, // 賃金要件(月8.8万円)。令和8年10月1日施行予定で撤廃(政省令は意見募集段階)
   shahoRate: 0.147, // 本人負担の概算: 健保4.95+厚年9.15+雇用0.5+支援金0.115=14.715%(令和8年度)
-  fuyo130: 1300000,
+  fuyo130: 1300000, // 被扶養者の収入基準(配偶者など)
+  fuyo150: 1500000, // 19歳以上23歳未満(配偶者除く)の収入基準。令和7年10月1日から130万→150万に引き上げ(確認日2026-06-12 https://www.nenkin.go.jp/oshirase/taisetu/2025/202508/0819.html)
   kokuminNenkin: 17920 * 12, // 令和8年度月額17,920円
   sources: {
     mof: { url: "https://www.mof.go.jp/tax_policy/tax_reform/outline/index.html", label: "財務省(税制改正)" },
     nta: { url: "https://www.nta.go.jp/publication/pamph/gensen/2026kaisei.pdf", label: "国税庁(令和8年改正)" },
     soumu: { url: "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/150790_06.html", label: "総務省(住民税)" },
     nenkinTanjikan: { url: "https://www.nenkin.go.jp/service/kounen/tekiyo/jigyosho/tanjikan.html", label: "日本年金機構(社会保険の加入条件)" },
-    nenkinFuyo: { url: "https://www.nenkin.go.jp/service/kounen/jigyosho-hiho/hihokensha1/20141204.html", label: "日本年金機構(扶養の条件)" },
+    nenkinFuyo: { url: "https://www.nenkin.go.jp/service/kounen/tekiyo/hihokensha1/20141202.html", label: "日本年金機構(扶養の条件)" }, // 旧URL(jigyosho-hiho/…/20141204.html)が404のため2026-06-12差し替え
   },
 };

@@ -64,7 +64,10 @@ export function socialInsuranceKabe(salary, o) {
   if (employeeEligible) {
     return { type: "employee", amount: Math.round(salary * KABE_CONFIG.shahoRate) };
   }
-  const needsOwn = o.dependent ? salary >= KABE_CONFIG.fuyo130 : salary > 0;
+  // 扶養の収入基準: 配偶者は130万円未満、19歳以上23歳未満(配偶者除く)は令和7年10月から150万円未満。
+  // 「親の扶養内で働く(学生)」トラックは19〜22歳想定のため150万円を適用する。
+  const fuyoLimit = o.student ? KABE_CONFIG.fuyo150 : KABE_CONFIG.fuyo130;
+  const needsOwn = o.dependent ? salary >= fuyoLimit : salary > 0;
   if (needsOwn) {
     const shotoku = Math.max(0, salary - kyuyoKojo(salary));
     const kokuho = Math.max(25000, Math.round((Math.max(0, shotoku - 430000)) * 0.10 + 50000));

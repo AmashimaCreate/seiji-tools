@@ -30,6 +30,11 @@ const kabeCases = [
   { label: "150万・学生(親扶養)・50人以下",
     salary: 1500000, o: { dependent: true, student: true, large: false, week20: true, afterOct: false },
     expect: { shaho: 298040, it: 0, rt: 5000, net: 1196960 } },
+  // 2026-06-12追加: 19〜22歳(配偶者除く)の扶養基準は令和7年10月から150万円未満。
+  // 学生トラックは140万円なら扶養内(社保0円)になることを固定する。
+  { label: "140万・学生(親扶養)・50人以下 → 扶養内(150万円未満)",
+    salary: 1400000, o: { dependent: true, student: true, large: false, week20: true, afterOct: false },
+    expect: { shaho: 0, it: 0, rt: 5000, net: 1395000 } },
   { label: "129万・配偶者扶養・50人以下",
     salary: 1290000, o: { dependent: true, student: false, large: false, week20: true, afterOct: false },
     expect: { shaho: 0, it: 0, rt: 14500, net: 1275500 } },
@@ -64,4 +69,4 @@ if (failed > 0) {
   console.error(`\n${failed}件不一致`);
   process.exit(1);
 }
-console.log("\n全9ケース一致(指示書7-1)");
+console.log(`\n全${tedoriCases.length + kabeCases.length}ケース一致(指示書7-1 + 追加ケース)`);
